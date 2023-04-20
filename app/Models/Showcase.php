@@ -5,19 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Course extends Model
+class Showcase extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'image',
-        'slug',
-        'category_id',
         'user_id',
-        'demo',
-        'description',
-        'discount',
-        'price'
+        'course_id',
+        'title',
+        'cover',
+        'description'
     ];
 }
