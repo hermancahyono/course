@@ -14,4 +14,12 @@ class Cart extends Model
         'course_id',
         'price'
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function course(){
+        return $this->belongsTo(Course::class);
+    }
 }
