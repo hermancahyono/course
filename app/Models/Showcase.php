@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,6 +17,15 @@ class Showcase extends Model
         'cover',
         'description'
     ];
+
+    //add accesor methods
+
+    public function cover(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($cover) => asset('storage/showcase/' . $this->$cover),
+        );
+    }
 
     public function user()
     {
