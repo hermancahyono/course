@@ -17,4 +17,9 @@ class Video extends Model
         'intro', 
         'video_code'
     ];
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
 }
