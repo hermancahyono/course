@@ -14,4 +14,14 @@ class TransactionDetail extends Model
         'course_id',
         'price'
     ];
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
+
+    public function transaction()
+    {
+        return $this->belongsTo(Transaction::class);
+    }
 }
