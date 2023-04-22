@@ -20,4 +20,32 @@ class Course extends Model
         'discount',
         'price'
     ];
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function videos(){
+        return $this->hasMany(Video::class);
+    }
+    
+    public function carts()
+    {
+        return $this->hasMany(Cart::class);
+    }
+
+    public function details()
+    {
+        return $this->hasMany(TransactionDetail::class);
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
 }
