@@ -14,4 +14,9 @@ class Category extends Model
         'slug',
         'image',
     ];
+
+    public function course()
+    {
+        return $this->hasMany(Course::class);
+    }
 }
