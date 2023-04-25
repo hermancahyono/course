@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class RoleSeeder extends Seeder
 {
@@ -15,10 +15,7 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        collect([
-            ['name' => 'admin'],
-            ['name' => 'member'],
-            ['name' => 'author']
-        ])->each(fn ($data) => Role::create($data));
+        collect([['name' => 'admin'],['name' => 'member'], ['name' => 'author']])
+            ->each(fn ($data) => Role::create($data));
     }
 }
