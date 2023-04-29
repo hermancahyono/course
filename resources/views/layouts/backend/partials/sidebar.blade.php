@@ -29,7 +29,7 @@
                     </li>
                     <li class="nav-header">MASTER DATA</li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href=" {{ route('admin.category.index') }}" class="nav-link {{ active('admin.category*') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-category-2 nav-icon"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
                                 fill="none" stroke-linecap="round" stroke-linejoin="round">

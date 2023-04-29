@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 
@@ -22,4 +23,6 @@ Route::get('/', function () {
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function(){
     // admin dashboard route
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
+    // admin category route resource
+    Route::resource('category', CategoryController::class);
 });
