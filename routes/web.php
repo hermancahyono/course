@@ -28,4 +28,5 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth', 'r
     Route::resource('category', CategoryController::class);
     // admin course route resource
     Route::resource('course', CourseController::class);
+    Route::get('/my-course', CourseController::class)->name('mycourse');
 });
