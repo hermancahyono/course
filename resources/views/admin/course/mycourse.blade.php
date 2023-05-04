@@ -168,7 +168,7 @@
                     @empty
                         <div class="row">
                             <div class="col-12 d-flex justify-content-center">
-                                <img src="{{ asset('course.svg') }}" class="img-fluid" width="60%">
+                                <img src="{{ asset('course.jpg') }}" class="img-fluid" width="60%">
                             </div>
                         </div>
                     @endforelse
