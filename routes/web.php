@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\MyCourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +29,5 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth', 'r
     Route::resource('category', CategoryController::class);
     // admin course route resource
     Route::resource('course', CourseController::class);
-    Route::get('/my-course', CourseController::class)->name('mycourse');
+    Route::get('/my-course', MyCourseController::class)->name('mycourse');
 });

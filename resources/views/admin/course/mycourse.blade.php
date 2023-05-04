@@ -103,7 +103,7 @@
                                                             <option value="4">4</option>
                                                             <option value="5">5</option>
                                                         </x-select>
-                                                        <x-textarea title="Review" name="review"
+                                                        <x-text-area title="Review" name="review"
                                                             value="{{ old('review') }}" placeholder="" />
                                                     </div>
                                                     <div class="modal-footer justify-content-between">
@@ -137,7 +137,7 @@
                                                             <option value="4">4</option>
                                                             <option value="5">5</option>
                                                         </x-select>
-                                                        <x-textarea title="Review" name="review"
+                                                        <x-text-area title="Review" name="review"
                                                             value="{{ old('review') }}" placeholder="" />
                                                     </div>
                                                     <div class="modal-footer justify-content-between">
