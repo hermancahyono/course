@@ -32,7 +32,7 @@
                                 </span>
                             </li>
                         </ul>
-                        <a href="" class="btn btn-warning btn-sm">
+                        <a href="{{ route('admin.video.index', $course->slug) }}" class="btn btn-warning btn-sm">
                             <i class="fas fa-list"></i>
                             List Eps
                         </a>
