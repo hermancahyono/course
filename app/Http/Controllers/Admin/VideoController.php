@@ -38,7 +38,7 @@ class VideoController extends Controller
             'name' => $request->name,
             'episode' => $request->episode,
             'intro' => $request->intro,
-            'video_code' => $request->video_code
+            'video_code' => $request->video_code,
         ]);
         //kembali ke halaman admin/video/index dengan membawa toastr.
         return redirect(route('admin.video.index'))->with('toast_success', 'Video berhasil ditambahkan');
