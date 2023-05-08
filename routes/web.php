@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\MyCourseController;
 use App\Http\Controllers\Admin\VideoController;
+use App\Http\Controllers\Admin\ShowcaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +41,6 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth', 'r
        Route::put('/update/{course:slug}/{video}', 'update')->name('update');
        Route::delete('/delete/{video}', 'destroy')->name('destroy');
     });
+    // admin showcase route
+    Route::get('/showcase', ShowcaseController::class)->name('showcase.index');
 });
