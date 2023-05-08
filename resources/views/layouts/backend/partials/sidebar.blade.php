@@ -284,8 +284,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href=""
-                            class="nav-link">
+                        <a href="{{ route('admin.showcase.index') }}"
+                            class="nav-link {{ active('admin.showcase*') }}">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-source-code nav-icon" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
