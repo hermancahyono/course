@@ -43,4 +43,9 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth', 'r
     });
     // admin showcase route
     Route::get('/showcase', ShowcaseController::class)->name('showcase.index');
+    // admin review route
+    Route::controller(ReviewController::class)->group(function(){
+        Route::get('/review', 'index')->name('review.index');
+        Route::post('/review/{course}', 'store')->name('review');
+    });
 });
