@@ -51,7 +51,7 @@
                         <rect x="5" y="6" width="14" height="10" rx="1"></rect>
                     </svg>
                 </div>
-                <a href="" class="small-box-footer">
+                <a href="{{ route('admin.course.index') }}" class="small-box-footer">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
             </div>
@@ -75,7 +75,7 @@
                         <circle cx="7" cy="7" r="3"></circle>
                     </svg>
                 </div>
-                <a href="" class="small-box-footer">
+                <a href="{{ route('admin.category.index') }}" class="small-box-footer">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
             </div>
