@@ -37,7 +37,7 @@
                                         Lanjutkan Belajar
                                     </a>
                                     <button type="button" class="btn btn-primary btn-md mb-2 w-100" data-toggle="modal"
-                                        data-target="#modal-default{{ $data->course->id }}">
+                                        data-target="modal-default{{ $data->course->id }}">
                                         <i class="fas fa-comments mr-1"></i> Review Course
                                     </button>
                                     <div class="modal fade" id="modal-default{{ $data->course->id }}">

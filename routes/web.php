@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\MyCourseController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\ShowcaseController;
+use App\Http\Controllers\Admin\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
