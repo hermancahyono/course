@@ -2,39 +2,39 @@
 
 namespace App\Models;
 
+use App\Traits\HasScope;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Showcase extends Model
 {
-    use HasFactory;
+  use HasFactory, HasScope;
 
-    protected $fillable = [
-        'user_id',
-        'course_id',
-        'title',
-        'cover',
-        'description'
-    ];
+  protected $fillable = [
+    'user_id',
+    'course_id',
+    'title',
+    'cover',
+    'description'
+  ];
 
-    //add accesor methods
+  //add accesor methods
 
-    public function cover(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($cover) => asset('storage/showcase/' . $this->$cover),
-        );
-    }
+  public function cover(): Attribute
+  {
+    return Attribute::make(
+      get: fn ($cover) => asset('storage/showcase/' . $this->$cover),
+    );
+  }
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+  public function user()
+  {
+    return $this->belongsTo(User::class);
+  }
 
-    public function course()
-    {
-        return $this->belongsTo(Course::class);
-    }
-
+  public function course()
+  {
+    return $this->belongsTo(Course::class);
+  }
 }
