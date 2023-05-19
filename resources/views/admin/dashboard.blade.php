@@ -98,7 +98,7 @@
                         <path d="M10 9l2 -2l-2 -2"></path>
                     </svg>
                 </div>
-                <a href="" class="small-box-footer">
+                <a href="{{ route('admin.showcase.index') }}" class="small-box-footer">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
             </div>
