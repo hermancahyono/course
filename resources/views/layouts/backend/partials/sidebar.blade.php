@@ -94,7 +94,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route('admin.showcase.index') }}" class="nav-link {{ active('admin.showcase*') }}">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-source-code nav-icon" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -110,7 +110,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('admin.review.index') }}" class="nav-link {{active('admin.review.index')}}">
+                        <a href="{{ route('admin.review.index') }}" class="nav-link {{ active('admin.review.index') }}">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-message-2 nav-icon" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -146,8 +146,8 @@
                     </li>
                     <li class="nav-header">Transaction</li>
                     <li class="nav-item">
-                        <a href=""
-                            class="nav-link">
+                        <a href="{{ route('admin.transaction.index') }}"
+                            class="nav-link {{ active('admin.transaction*') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-receipt nav-icon"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
                                 stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -234,8 +234,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href=""
-                                        class="nav-link">
+                                    <a href="" class="nav-link">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-corner-down-right-double nav-icon"
                                             width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
@@ -249,8 +248,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href=""
-                                        class="nav-link">
+                                    <a href="" class="nav-link">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-corner-down-right-double nav-icon"
                                             width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
@@ -284,8 +282,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('admin.showcase.index') }}"
-                            class="nav-link {{ active('admin.showcase*') }}">
+                        <a href="" class="nav-link">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-source-code nav-icon" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -302,8 +299,7 @@
                     </li>
                     <li class="nav-header">TRANSACTION</li>
                     <li class="nav-item">
-                        <a href=""
-                            class="nav-link">
+                        <a href="" class="nav-link">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-receipt nav-icon"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
                                 stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -319,8 +315,7 @@
                     </li>
                     <li class="nav-header">CONFIGURATION</li>
                     <li class="nav-item">
-                        <a href=""
-                            class="nav-link">
+                        <a href="" class="nav-link">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-user-circle nav-icon" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
