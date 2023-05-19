@@ -37,7 +37,7 @@
                                         Lanjutkan Belajar
                                     </a>
                                     <button type="button" class="btn btn-primary btn-md mb-2 w-100" data-toggle="modal"
-                                        data-target="modal-default{{ $data->course->id }}">
+                                        data-target="#modal-default{{ $data->course->id }}">
                                         <i class="fas fa-comments mr-1"></i> Review Course
                                     </button>
                                     <div class="modal fade" id="modal-default{{ $data->course->id }}">
@@ -137,7 +137,7 @@
                                                             <option value="4">4</option>
                                                             <option value="5">5</option>
                                                         </x-select>
-                                                        <x-text-area title="Review" name="review"
+                                                        <x-textarea title="Review" name="review"
                                                             value="{{ old('review') }}" placeholder="" />
                                                     </div>
                                                     <div class="modal-footer justify-content-between">
@@ -168,7 +168,7 @@
                     @empty
                         <div class="row">
                             <div class="col-12 d-flex justify-content-center">
-                                <img src="{{ asset('course.jpg') }}" class="img-fluid" width="60%">
+                                <img src="{{ asset('course.svg') }}" class="img-fluid" width="60%">
                             </div>
                         </div>
                     @endforelse
