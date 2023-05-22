@@ -104,7 +104,7 @@ class UserController extends Controller
     }
 
     // kembali kehalaman sebelumnya dengan membawa toastr.
-    return back()->with('toast_succes', 'Profile Updated');
+    return back()->with('toast_success', 'Profile Updated');
   }
 
   public function updatePassword(Request $request, User $user)
