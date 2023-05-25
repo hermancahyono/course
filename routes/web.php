@@ -38,7 +38,7 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth', 'r
   Route::controller(UserController::class)->as('user.')->group(function () {
     Route::get('/user/profile', 'profile')->name('profile');
     Route::put('/user/profile/{user}', 'profileUpdate')->name('profile.update');
-    Route::put('/user/profile/password/{user}', 'profile')->name('profile.password');
+    Route::put('/user/profile/password/{user}', 'updatePassword')->name('profile.password');
   });
   Route::resource('/user', UserController::class)->only('index', 'update', 'destroy');
   //admin video route
