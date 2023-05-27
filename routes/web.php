@@ -10,6 +10,8 @@ use App\Http\Controllers\Admin\ShowcaseController;
 use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Member\DashboardController as MemberDashboardController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,4 +61,9 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth', 'r
   });
   // admin transaction route
   Route::resource('/transaction', TransactionController::class)->only('index', 'show');
+});
+// member route
+Route::group(['as' => 'member.', 'prefix' => 'account', 'middleware' => ['auth', 'role:member|author']], function(){
+  // member dashboard route
+  Route::get('/dashboard', MemberDashboardController::class)->name('dashboard');
 });
