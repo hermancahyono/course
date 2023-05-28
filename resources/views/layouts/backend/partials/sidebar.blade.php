@@ -216,8 +216,8 @@
                     </li>
                     @role('author')
                         <li class="nav-header">MASTER DATA</li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
+                        <li class="nav-item {{ Route::is('member.course*') ? 'menu-open' : '' }}">
+                            <a href="#" class="nav-link {{ active('member.course*') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon-tabler icon-tabler-device-laptop nav-icon" width="24" height="24"
                                     viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -234,7 +234,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="" class="nav-link">
+                                    <a href="{{ route('member.course.index') }}" class="nav-link">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-corner-down-right-double nav-icon"
                                             width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
@@ -248,7 +248,8 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="" class="nav-link">
+                                    <a href="{{ route('member.course.create') }}"
+                                        class="nav-link {{ active('member.course.create') }}">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-corner-down-right-double nav-icon"
                                             width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
