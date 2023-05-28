@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Member\DashboardController as MemberDashboardController;
+use App\Http\Controllers\Member\CourseController as MemberCourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,4 +67,7 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth', 'r
 Route::group(['as' => 'member.', 'prefix' => 'account', 'middleware' => ['auth', 'role:member|author']], function(){
   // member dashboard route
   Route::get('/dashboard', MemberDashboardController::class)->name('dashboard');
+  // member course route
+  Route::resource('course', MemberCourseController::class);
 });
+
