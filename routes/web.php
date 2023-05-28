@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Member\DashboardController as MemberDashboardController;
 use App\Http\Controllers\Member\CourseController as MemberCourseController;
 use App\Http\Controllers\Member\MyCourseController as MemberMyCourseController;
+use App\Http\Controllers\Member\ReviewController as MemberReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,4 +72,6 @@ Route::group(['as' => 'member.', 'prefix' => 'account', 'middleware' => ['auth',
   // member course route
   Route::get('/my-course', MemberMyCourseController::class)->name('mycourse');
   Route::resource('course', MemberCourseController::class)->middleware('role:author');
+  // member review route
+  Route::post('review/{course}', [MemberReviewController::class, 'store'])->name('review');
 });
