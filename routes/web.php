@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Member\DashboardController as MemberDashboardController;
 use App\Http\Controllers\Member\CourseController as MemberCourseController;
+use App\Http\Controllers\Member\MyCourseController as MemberMyCourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,10 +65,10 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth', 'r
   Route::resource('/transaction', TransactionController::class)->only('index', 'show');
 });
 // member route
-Route::group(['as' => 'member.', 'prefix' => 'account', 'middleware' => ['auth', 'role:member|author']], function(){
+Route::group(['as' => 'member.', 'prefix' => 'account', 'middleware' => ['auth', 'role:member|author']], function () {
   // member dashboard route
   Route::get('/dashboard', MemberDashboardController::class)->name('dashboard');
   // member course route
-  Route::resource('course', MemberCourseController::class);
+  Route::get('/my-course', MemberMyCourseController::class)->name('mycourse');
+  Route::resource('course', MemberCourseController::class)->middleware('role:author');
 });
-
