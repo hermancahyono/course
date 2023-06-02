@@ -181,7 +181,7 @@
                                     yang anda impikan.
                                 </p>
                                 <div class="d-flex justify-content-center">
-                                    <a href="{{ route('home') }}" class="btn btn-dark btn-sm">
+                                    <a href="" class="btn btn-dark btn-sm">
                                         Lihat Daftar Course
                                     </a>
                                 </div>
