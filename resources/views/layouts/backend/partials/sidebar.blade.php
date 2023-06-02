@@ -1,5 +1,5 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <a href="/admin/dashboard" class="brand-link">
+    <a href="" class="brand-link">
         <div class="text-center">
             <span class="brand-text font-weight-bold">LaraDev</span>
         </div>
@@ -198,7 +198,7 @@
                 @role('member|author')
                     <li class="nav-header">DASHBOARD</li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route('member.dashboard') }}" class="nav-link">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-brand-tabler nav-icon" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
