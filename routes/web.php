@@ -14,6 +14,7 @@ use App\Http\Controllers\Member\DashboardController as MemberDashboardController
 use App\Http\Controllers\Member\CourseController as MemberCourseController;
 use App\Http\Controllers\Member\MyCourseController as MemberMyCourseController;
 use App\Http\Controllers\Member\ReviewController as MemberReviewController;
+use App\Http\Controllers\Member\VideoController as MemberVideoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,4 +75,13 @@ Route::group(['as' => 'member.', 'prefix' => 'account', 'middleware' => ['auth',
   Route::resource('course', MemberCourseController::class)->middleware('role:author');
   // member review route
   Route::post('review/{course}', [MemberReviewController::class, 'store'])->name('review');
+  // member video route
+  Route::controller(MemberVideoController::class)->as('video.')->middleware('role:author')->group(function () {
+    Route::get('/{course:slug}/video', 'index')->name('index');
+    Route::get('/{course:slug}/create', 'create')->name('create');
+    Route::post('/{course:slug}/store', 'store')->name('store');
+    Route::get('/edit/{course:slug}/{video}', 'edit')->name('edit');
+    Route::put('/update/{course:slug}/{video}', 'update')->name('update');
+    Route::delete('/delete/{video}', 'destroy')->name('destroy');
+  });
 });
