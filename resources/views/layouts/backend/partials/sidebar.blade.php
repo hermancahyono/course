@@ -283,7 +283,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route('member.showcase.index') }}"
+                            class="nav-link {{ active('member.showcase*') }}}">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-source-code nav-icon" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -300,7 +301,8 @@
                     </li>
                     <li class="nav-header">TRANSACTION</li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route('member.transaction.index') }}"
+                            class="nav-link {{ active('member.transaction*') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-receipt nav-icon"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
                                 stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -316,7 +318,8 @@
                     </li>
                     <li class="nav-header">CONFIGURATION</li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route('member.profile.index') }}"
+                            class="nav-link {{ active('member.profile.index') }}">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-user-circle nav-icon" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"

@@ -15,6 +15,9 @@ use App\Http\Controllers\Member\CourseController as MemberCourseController;
 use App\Http\Controllers\Member\MyCourseController as MemberMyCourseController;
 use App\Http\Controllers\Member\ReviewController as MemberReviewController;
 use App\Http\Controllers\Member\VideoController as MemberVideoController;
+use App\Http\Controllers\Member\ShowcaseController as MemberShowcaseController;
+use App\Http\Controllers\Member\TransactionController as MemberTransactionController;
+use App\Http\Controllers\Member\ProfileController as MemberProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -83,5 +86,18 @@ Route::group(['as' => 'member.', 'prefix' => 'account', 'middleware' => ['auth',
     Route::get('/edit/{course:slug}/{video}', 'edit')->name('edit');
     Route::put('/update/{course:slug}/{video}', 'update')->name('update');
     Route::delete('/delete/{video}', 'destroy')->name('destroy');
+  });
+  // member showcase route
+  Route::resource('/showcase', MemberShowcaseController::class);
+  // member transaction route
+  Route::resource('/transaction', MemberTransactionController::class)->only('index', 'show');
+  // member profile route
+  Route::controller(MemberProfileController::class)->as('profile.')->group(function () {
+    Route::get(
+      '/profile',
+      'index'
+    )->name('index');
+    Route::put('/profile/{user}', 'updateProfile')->name('update');
+    Route::put('/profile/password/{user}', 'updatePassword')->name('password');
   });
 });
