@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ShowcaseController;
 use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\NotificationDatabaseController;
 use App\Http\Controllers\Member\DashboardController as MemberDashboardController;
 use App\Http\Controllers\Member\CourseController as MemberCourseController;
 use App\Http\Controllers\Member\MyCourseController as MemberMyCourseController;
@@ -18,6 +19,10 @@ use App\Http\Controllers\Member\VideoController as MemberVideoController;
 use App\Http\Controllers\Member\ShowcaseController as MemberShowcaseController;
 use App\Http\Controllers\Member\TransactionController as MemberTransactionController;
 use App\Http\Controllers\Member\ProfileController as MemberProfileController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Landing\CartController;
+use App\Http\Controllers\Landing\CategoryController as LandingCategoryController;
+use App\Http\Controllers\Landing\CourseController as LandingCourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,8 +35,21 @@ use App\Http\Controllers\Member\ProfileController as MemberProfileController;
 |
 */
 
-Route::get('/', function () {
-  return view('auth.login');
+// home route
+Route::get('/', HomeController::class)->name('home');
+// course route
+Route::controller(LandingCourseController::class)->as('course.')->group(function () {
+  Route::get('/course', 'index')->name('index');
+  Route::get('/course/{course:slug}', 'show')->name('show');
+  Route::get('/course/{course:slug}/{video:episode}', 'video')->name('video');
+});
+// category route
+Route::get('/category/{category:slug}', LandingCategoryController::class)->name('category');
+// cart route
+Route::controller(CartController::class)->middleware('auth')->as('cart.')->group(function () {
+  Route::get('/cart', 'index')->name('index');
+  Route::post('/cart/{course}', 'store')->name('store');
+  Route::delete('/cart/{cart}', 'destroy')->name('destroy');
 });
 
 // admin route
@@ -68,6 +86,11 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth', 'r
   });
   // admin transaction route
   Route::resource('/transaction', TransactionController::class)->only('index', 'show');
+  // admin marknotification route
+  Route::controller(NotificationDatabaseController::class)->group(function () {
+    Route::post('/mark-as-read/{id}', 'readNotification')->name('markNotification');
+    Route::post('/mark-all-read', 'readAllNotification')->name('markAllRead');
+  });
 });
 // member route
 Route::group(['as' => 'member.', 'prefix' => 'account', 'middleware' => ['auth', 'role:member|author']], function () {
