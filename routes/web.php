@@ -23,7 +23,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Landing\CartController;
 use App\Http\Controllers\Landing\CategoryController as LandingCategoryController;
 use App\Http\Controllers\Landing\CourseController as LandingCourseController;
-
+use App\Http\Controllers\Landing\ReviewController as LandingReviewController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,7 +51,8 @@ Route::controller(CartController::class)->middleware('auth')->as('cart.')->group
   Route::post('/cart/{course}', 'store')->name('store');
   Route::delete('/cart/{cart}', 'destroy')->name('destroy');
 });
-
+// review route
+Route::get('/review', LandingReviewController::class)->name('review');
 // admin route
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {
   // admin dashboard route
