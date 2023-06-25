@@ -24,6 +24,7 @@ use App\Http\Controllers\Landing\CartController;
 use App\Http\Controllers\Landing\CategoryController as LandingCategoryController;
 use App\Http\Controllers\Landing\CourseController as LandingCourseController;
 use App\Http\Controllers\Landing\ReviewController as LandingReviewController;
+use App\Http\Controllers\Landing\ShowcaseController as LandingShowcaseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,6 +54,8 @@ Route::controller(CartController::class)->middleware('auth')->as('cart.')->group
 });
 // review route
 Route::get('/review', LandingReviewController::class)->name('review');
+// showcase route
+Route::get('/showcase', LandingShowcaseController::class)->name('showcase');
 // admin route
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {
   // admin dashboard route
