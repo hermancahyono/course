@@ -1,5 +1,5 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <a href="" class="brand-link">
+    <a href="{{ route('home') }}" class="brand-link">
         <div class="text-center">
             <span class="brand-text font-weight-bold">LaraDev</span>
         </div>
